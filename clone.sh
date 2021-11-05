@@ -20,10 +20,14 @@ do
     
     if [ $response_length -lt 1 ]; then
 	    echo "No more results. Exiting..."
+	    
+	    cd ..
+
 	    exit 1
     fi
 
     PAGE=$(($PAGE+1))
 
-    echo "$response" | jq 'if (.[].archived == false) then .[].html_url else "" end' | grep -v "\"\"" | xargs -n 1 git clone 
+    echo "$response" | jq 'if (.[].archived == false) then .[].html_url else "" end' | grep -v "\"\"" | xargs -I {} git clone {}
+
 done
