@@ -31,3 +31,16 @@ Find all the urls from all the repositories of the organization (Searches in the
 #### `broken.sh`
 
 Checks all the urls found by `grepURL.sh` and captures the status code of the URL
+
+
+## Commands
+
+- Search for string in all cloned repositories
+
+```
+ls -d -1 target/* | grep -v target.txt | xargs -I {} sh search.sh {} "{{STRING_TO_SEARCH}}"
+```
+
+```
+grep -r -o "{{STRING_TO_SEARCH}}" target/.
+```
