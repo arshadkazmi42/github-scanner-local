@@ -1,3 +1,1 @@
-echo "Searching $2 in $1" 
-
-grep -r -o -E $2 $1
+ls -d -1 $1/* | grep -v $1.txt | xargs -I {} sh grepPattern.sh {} "$2"
