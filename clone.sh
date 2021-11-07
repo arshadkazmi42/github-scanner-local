@@ -6,6 +6,6 @@ fi
 
 cd $1
 echo "Start Cloning"
-cat $1.txt | xargs -I {} git clone {}
+cat $1.txt | xargs -n1 -P5 -I {} git clone {}
 
 cd ..

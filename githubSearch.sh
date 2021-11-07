@@ -1,1 +1,1 @@
-sh github-accounts.sh results/$1-broken.txt | xargs -I {} sh search.sh $1 "{}"
+sh github-accounts.sh results/$1-broken.txt | xargs -n1 -P100 -I {} sh search.sh $1 "{}"
