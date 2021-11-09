@@ -26,7 +26,7 @@ do
 
     PAGE=$(($PAGE+1))
     
-    echo "$response" | jq -r 'if (.[].archived == false and .[].fork == false) then .[].html_url else "ARSHAD" end' | grep -v "ARSHAD" | tee -a $1.txt
+    echo "$response" | jq -r '.[] | select(.archived == false) | .html_url' | tee -a $1.txt
 
 done
 
