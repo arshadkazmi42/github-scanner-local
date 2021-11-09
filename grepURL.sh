@@ -1,8 +1,12 @@
+cd /home/arshad/workspace/bounty/github-scanner-local
+
 echo "Crawling urls from: "$1
 
 grep -r -ohP '(http.?://(www.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}.[a-zA-Z0-9]{1,6}|github.com)\b([-a-zA-Z0-9@:%_\+.~#?&\/=]*)' $1 > results/$1.txt
 
-cat results/$1.txt | grep -v "^Binary" | awk NF > results/temp.txt
+grep -r -ohP 'git@github.com\:[-a-zA-Z0-9\/.]*' $1 | awk -F ':' '{print "https://github.com/"$2}' >> results/$1.txt
+
+cat results/$1.txt | grep -v "^Binary" | grep -v "https://t.co/" | grep -v "example.com" | grep -v "example.org" | awk NF > results/temp.txt
 
 rm -rf results/$1.txt
 	
