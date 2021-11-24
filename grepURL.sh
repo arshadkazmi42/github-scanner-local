@@ -1,4 +1,3 @@
-cd /home/arshad/workspace/bounty/github-scanner-local
 
 echo "Crawling urls from: "$1
 
