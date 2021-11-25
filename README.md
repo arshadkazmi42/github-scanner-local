@@ -8,6 +8,8 @@ Locally scan all the repositories of a github organization.
   - [gh-crawl](https://github.com/arshadkazmi42/gh-crawl) 
   - [bash-scripts](https://github.com/arshadkazmi42/bash-scripts)
 
+- Install `[npm-name](https://github.com/sindresorhus/npm-name)` globally 
+
 ## Usage
 
 ```
