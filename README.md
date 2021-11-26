@@ -8,12 +8,23 @@ Locally scan all the repositories of a github organization.
   - [gh-crawl](https://github.com/arshadkazmi42/gh-crawl) 
   - [bash-scripts](https://github.com/arshadkazmi42/bash-scripts)
 
-- Install `[npm-name](https://github.com/sindresorhus/npm-name)` globally 
+- Install `[npm-name-cli](https://github.com/sindresorhus/npm-name-cli)` globally 
+- Install `[pip-name](https://github.com/danishprakash/pip-name)`
+
+```
+$ npm i npm-name-cli -g
+
+$ pip install pip-name
+```
 
 ## Usage
 
 ```
-sh run.sh {GITHUB_ORGANIZATION_NAME}
+$ sh run.sh {GITHUB_ORGANIZATION_NAME}
+
+$ sh runNpmDeps.sh {FOLDER_NAME}
+
+$ sh runPipDeps.sh {FOLDER_NAME}
 ```
 
 ## Working
