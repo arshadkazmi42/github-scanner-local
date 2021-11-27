@@ -8,11 +8,14 @@ Locally scan all the repositories of a github organization.
   - [gh-crawl](https://github.com/arshadkazmi42/gh-crawl) 
   - [bash-scripts](https://github.com/arshadkazmi42/bash-scripts)
 
-- Install `[npm-name-cli](https://github.com/sindresorhus/npm-name-cli)` globally 
+- Install `[npm-name-cli](https://github.com/sindresorhus/npm-name-cli)` globally
+- Install `[get-dependencies](https://github.com/SharonGrossman/get-dependencies)` globally 
 - Install `[pip-name](https://github.com/danishprakash/pip-name)`
 
 ```
 $ npm i npm-name-cli -g
+
+$ npm i get-dependencies -g
 
 $ pip install pip-name
 ```
