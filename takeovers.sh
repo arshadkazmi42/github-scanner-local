@@ -1,1 +1,2 @@
-cat results/$1-broken.txt | grep "googleapis\|amazonaws\|vercel.app\|netlify\|herokuapp\|surge.sh\|now.sh\|opencollective\|pattreon\|plugins.svn.wordpress.org\|npmjs.org\/package"
+cat results/$1-broken.txt | grep -v "ajax.googleapis.com\|awscli.amazonaws.com\|docs.aws.amazon.com\|ec2.amazonaws.com\|fonts.googleapis.com\|maps.googleapis.com\|oauth2.googleapis.com\|openidconnect.googleapis.com\|play.googleapis.com\|sns.amazonaws.com" | grep "actions-contrib\|googleapis\|amazonaws\|vercel.app\|netlify\|herokuapp\|surge.sh\|now.sh\|opencollective\|pattreon\|plugins.svn.wordpress.org\|npmjs.org\/package"
+
