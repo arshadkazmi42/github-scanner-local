@@ -20,3 +20,7 @@ cat dependencies/ruby/$1-available.txt | grep "is available"
 echo "\n"
 
 sh runGithubWorkflow.sh $1
+
+sh runBuckets.sh $1
+
+sh runDocker.sh $1
