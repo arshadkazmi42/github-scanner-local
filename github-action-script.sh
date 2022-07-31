@@ -34,3 +34,5 @@ grep -ro -E "(s3|gs)://[-a-zA-Z0-9_\.]+" $1 | grep -vi "example\|bucketname$\|bu
 # Docker
 grep -roh -E "docker (pull|run|push) [-a-zA-Z0-9_]+/[-a-zA-Z0-9_]+" $1 | awk -F " " '{print $3}' | awk -F "/" '{print $1}' | sort | uniq | tee -a docker/$1.txt
 
+# Remove cloned repository 
+rm -rf $1 
