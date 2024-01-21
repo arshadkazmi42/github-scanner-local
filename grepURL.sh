@@ -1,13 +1,13 @@
 
 echo "Crawling urls from: "$1
 
-grep -r -ohP '(http.?://(www.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}.[a-zA-Z0-9]{1,6}|github.com)\b([-a-zA-Z0-9@:%_\+.~#?&\/=]*)' $1 > results/$1.txt
+grep -roh '(http.?://(www.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}.[a-zA-Z0-9]{1,6}|github.com)\b([-a-zA-Z0-9@:%_\+.~#?&\/=]*)' $1 > results/$1.txt
 
-grep -r -ohP 'git@github.com\:[-a-zA-Z0-9\/.]*' $1 | awk -F ':' '{print "https://github.com/"$2}' >> results/$1.txt
+grep -roh 'git@github.com\:[-a-zA-Z0-9\/.]*' $1 | awk -F ':' '{print "https://github.com/"$2}' >> results/$1.txt
 
-grep -r -ohP 'git@bitbucket.org\:[-a-zA-Z0-9\/.]*' $1 | awk -F ':' '{print "https://bitbucket.org/"$2}' >> results/$1.txt
+grep -roh 'git@bitbucket.org\:[-a-zA-Z0-9\/.]*' $1 | awk -F ':' '{print "https://bitbucket.org/"$2}' >> results/$1.txt
 
-grep -r -ohP 'git@gitlab.com\:[-a-zA-Z0-9\/.]*' $1 | awk -F ':' '{print "https://gitlab.com/"$2}' >> results/$1.txt
+grep -roh 'git@gitlab.com\:[-a-zA-Z0-9\/.]*' $1 | awk -F ':' '{print "https://gitlab.com/"$2}' >> results/$1.txt
 
 cat results/$1.txt | grep -v "youtube.com" | grep -v "^Binary" | grep -v "https://t.co/" | grep -v "example.com" | grep -v "example.org" | grep -v "stackoverflow.com" | grep -v "github.com/orgs"  | awk NF > results/temp.txt
 
