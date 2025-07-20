@@ -23,7 +23,7 @@ $ pip install pip-name
 ## Usage
 
 ```
-$ sh run.sh {GITHUB_ORGANIZATION_NAME}
+$ sh run.sh {GITHUB_ORGANIZATION_NAME} {GITHUB_TOKEN}
 
 $ sh runNpmDeps.sh {FOLDER_NAME}
 
