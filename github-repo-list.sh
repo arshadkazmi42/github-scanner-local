@@ -15,7 +15,7 @@ do
     #response=$(curl -s "https://api.github.com/orgs/$1/repos?per_page=100&page=$PAGE")
     #echo $response    
     
-    response_length=$(echo "$response" | jq '. | length')
+    response_length=$(echo "$response" | jq -r '. | length')
     
     echo "Response length: "$response_length
     
